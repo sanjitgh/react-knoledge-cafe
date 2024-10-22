@@ -1,6 +1,7 @@
 import { HiOutlineBookmark } from "react-icons/hi2";
 const Blog = ({ blog, handelAddToBookmark, handelMarkAsRead }) => {
   const {
+    id,
     cover,
     title,
     author,
@@ -49,7 +50,7 @@ const Blog = ({ blog, handelAddToBookmark, handelMarkAsRead }) => {
         ))}
       </p>
       <button
-        onClick={() => handelMarkAsRead(reading_time)}
+        onClick={() => handelMarkAsRead(id, reading_time)}
         className="text-blue-700 underline"
       >
         Mark as read
