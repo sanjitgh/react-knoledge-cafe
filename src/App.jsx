@@ -1,9 +1,25 @@
+import { useState } from "react";
 import "./App.css";
+import Blogs from "./component/Blogs/Blogs";
+import Bookmarks from "./component/Bookmarks/Bookmarks";
+import Header from "./component/Header/Header";
 
 function App() {
+  const [bookmarks, setBookmarks] = useState([]);
+
+  const handelAddToBookmark = blog =>{
+    console.log('bookmark coming soon');
+    console.log(blog);
+  }
   return (
     <>
-      <h1 className="text-blue-500 bg-red-300">Vite + React</h1>
+      <div className="container mx-auto px-1">
+        <Header></Header>
+        <main className="md:flex my-10">
+        <Blogs handelAddToBookmark={handelAddToBookmark}></Blogs>
+        <Bookmarks></Bookmarks>
+        </main>
+      </div>
     </>
   );
 }
