@@ -1,5 +1,5 @@
 import { HiOutlineBookmark } from "react-icons/hi2";
-const Blog = ({ blog, handelAddToBookmark }) => {
+const Blog = ({ blog, handelAddToBookmark, handelMarkAsRead }) => {
   const {
     cover,
     title,
@@ -48,9 +48,12 @@ const Blog = ({ blog, handelAddToBookmark }) => {
           <span key={hash}>{hash}</span>
         ))}
       </p>
-      <a className="text-blue-700 underline" href="">
+      <button
+        onClick={() => handelMarkAsRead(reading_time)}
+        className="text-blue-700 underline"
+      >
         Mark as read
-      </a>
+      </button>
     </div>
   );
 };
